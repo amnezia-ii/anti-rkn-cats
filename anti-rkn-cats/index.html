@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Коты-свободолюбцы против интернет-цензуры. Децентрализованное сопротивление с усами и лапками!">
+  <title>Коты против РКН - Батальон свободы</title>
+  
+  <!-- Preconnect to external domains -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Orbitron:wght@700&display=swap" rel="stylesheet">
+  
+  <!-- Critical CSS inlined -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Fira Code', 'Courier New', monospace;
+      background: #0a0a0a;
+      color: #00ff88;
+      overflow-x: hidden;
+    }
+    
+    .loading {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-size: 1.2rem;
+    }
+    
+    .hidden {
+      display: none;
+    }
+  </style>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div id="loading" class="loading">
+    <div class="cat-loader">🐱 Инициализация котофредона...</div>
+  </div>
+  
+  <div id="app" class="hidden">
+    <header class="hero">
+      <div class="matrix-bg" id="matrix"></div>
+      <nav class="nav">
+        <div class="nav-logo">🛡️ КОТЫ-РКН</div>
+        <div class="nav-links">
+          <a href="#heroes">Герои</a>
+          <a href="#weapons">Арсенал</a>
+          <a href="#deploy">Развёртывание</a>
+          <a href="#stats">Статистика</a>
+        </div>
+      </nav>
+      
+      <div class="hero-content">
+        <h1 class="hero-title">
+          <span class="glitch" data-text="КОТЫ-ПРОТИВ-РКН">КОТЫ-ПРОТИВ-РКН</span>
+        </h1>
+        <p class="hero-subtitle">Децентрализованное сопротивление с усами и лапками</p>
+        
+        <div class="hero-cta">
+          <button id="heroCat" class="hero-cat">
+            <span class="cat-icon">🐱</span>
+            <span>Хватай VPN-капюшон!</span>
+          </button>
+          <p class="cat-hint">*Кликни, чтобы увидеть паранойю в действии</p>
+        </div>
+      </div>
+      
+      <div class="freedom-counter">
+        <div class="counter-item">
+          <span class="counter-number" id="daysCounter">0</span>
+          <span class="counter-label">Дней без блокировок</span>
+        </div>
+        <div class="counter-item">
+          <span class="counter-number" id="catsCounter">1337</span>
+          <span class="counter-label">Активных котят</span>
+        </div>
+      </div>
+    </header>
+    
+    <main>
+      <section id="heroes" class="section heroes">
+        <h2 class="section-title">Отряд котофредонов</h2>
+        <div class="cat-grid">
+          <article class="cat-card mirror-cat">
+            <div class="cat-image">
+              <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="mirrorGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#4facfe;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#00f2fe;stop-opacity:1" />
+                  </linearGradient>
+                </defs>
+                <circle cx="100" cy="100" r="80" fill="url(#mirrorGrad)"/>
+                <circle cx="75" cy="85" r="8" fill="#000"/>
+                <circle cx="125" cy="85" r="8" fill="#000"/>
+                <path d="M 80 110 Q 100 125 120 110" stroke="#000" stroke-width="3" fill="none"/>
+                <path d="M 50 100 L 30 80 M 150 100 L 170 80" stroke="#333" stroke-width="3" stroke-linecap="round"/>
+                <rect x="60" y="140" width="80" height="20" rx="5" fill="#666"/>
+                <text x="100" y="155" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold">MIRROR</text>
+              </svg>
+            </div>
+            <h3>Зеркальный кот</h3>
+            <p>Создаёт точные копии заблокированных ресурсов. Каждый отражённый сайт - это зеркало свободы!</p>
+            <ul class="cat-skills">
+              <li>Клонирование доменов</li>
+              <li>Автообновление контента</li>
+              <li>Распределённые зеркала</li>
+            </ul>
+          </article>
+          
+          <article class="cat-card tunnel-cat">
+            <div class="cat-image">
+              <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="tunnelGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#fa709a;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#fee140;stop-opacity:1" />
+                  </linearGradient>
+                </defs>
+                <circle cx="100" cy="100" r="80" fill="url(#tunnelGrad)"/>
+                <circle cx="75" cy="85" r="8" fill="#000"/>
+                <circle cx="125" cy="85" r="8" fill="#000"/>
+                <path d="M 100 130 Q 85 140 70 130" stroke="#000" stroke-width="3" fill="none"/>
+                <path d="M 40 100 Q 100 40 160 100" stroke="#000" stroke-width="4" fill="none" stroke-dasharray="5,5"/>
+                <circle cx="100" cy="60" r="10" fill="#333" opacity="0.5"/>
+                <rect x="60" y="150" width="80" height="20" rx="5" fill="#666"/>
+                <text x="100" y="165" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold">TUNNEL</text>
+              </svg>
+            </div>
+            <h3>Туннельный кот</h3>
+            <p>Роет VPN-туннели через любые препятствия. Не существует такого файрволла, который он не перекопает!</p>
+            <ul class="cat-skills">
+              <li>WireGuard туннели</li>
+              <li>Shadowsocks прокси</li>
+              <li>Обфускация трафика</li>
+            </ul>
+          </article>
+          
+          <article class="cat-card ninja-cat">
+            <div class="cat-image">
+              <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="ninjaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#a8edea;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#fed6e3;stop-opacity:1" />
+                  </linearGradient>
+                </defs>
+                <circle cx="100" cy="100" r="80" fill="url(#ninjaGrad)"/>
+                <path d="M 70 70 L 85 55 L 115 55 L 130 70 Z" fill="#333"/>
+                <circle cx="75" cy="75" r="5" fill="#000"/>
+                <circle cx="125" cy="75" r="5" fill="#000"/>
+                <path d="M 100 90 Q 105 100 95 105" stroke="#000" stroke-width="2" fill="none"/>
+                <path d="M 50 100 Q 75 95 100 100 M 150 100 Q 125 95 100 100" stroke="#333" stroke-width="3" stroke-linecap="round"/>
+                <rect x="60" y="155" width="80" height="15" rx="3" fill="#666"/>
+                <text x="100" y="167" text-anchor="middle" fill="#fff" font-size="8" font-weight="bold">NINJA</text>
+              </svg>
+            </div>
+            <h3>Ниндзя-кот</h3>
+            <p>Невидимый мастер анонимности. Оставляет лишь след из цифровой пыли и мимимишных "няв".</p>
+            <ul class="cat-skills">
+              <li>Tor маршрутизация</li>
+              <li>Инкогнито-режим</li>
+              <li>Adblock + uMatrix</li>
+            </ul>
+          </article>
+          
+          <article class="cat-card hacker-cat">
+            <div class="cat-image">
+              <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="hackerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#ff0844;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#ffb199;stop-opacity:1" />
+                  </linearGradient>
+                </defs>
+                <circle cx="100" cy="100" r="80" fill="url(#hackerGrad)"/>
+                <rect x="60" y="60" width="80" height="60" rx="10" fill="#333"/>
+                <rect x="70" y="70" width="60" height="40" rx="5" fill="#00ff00" opacity="0.7"/>
+                <circle cx="75" cy="75" r="3" fill="#000"/>
+                <circle cx="125" cy="75" r="3" fill="#000"/>
+                <path d="M 90 90 L 110 90 M 90 95 L 105 95 M 90 100 L 115 100" stroke="#00ff00" stroke-width="2"/>
+                <rect x="55" y="140" width="90" height="20" rx="5" fill="#666"/>
+                <text x="100" y="155" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold">HACKER</text>
+              </svg>
+            </div>
+            <h3>Хакер-кот</h3>
+            <p>Шифровальный мастер. AES-256 это его любимая игрушка. Пароли взламывает быстрее, чем ты успеваешь сказать "мяу".</p>
+            <ul class="cat-skills">
+              <li>GPG шифрование</li>
+              <li>DNS-over-HTTPS</li>
+              <li>Certificate pinning</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+      
+      <section id="weapons" class="section weapons">
+        <h2 class="section-title">Арсенал свободы</h2>
+        <div class="weapons-grid">
+          <div class="weapon-card">
+            <h3>🗡️ VPN-капюшоны</h3>
+            <p>Невидимость в цифровом пространстве</p>
+            <div class="weapon-status status-active">Активно</div>
+          </div>
+          
+          <div class="weapon-card">
+            <h3>🔐 Парольные когти</h3>
+            <p>Двухфакторная аутентификация</p>
+            <div class="weapon-status status-active">Активно</div>
+          </div>
+          
+          <div class="weapon-card">
+            <h3>🕶️ Туннельные очки</h3>
+            <p>Обход DPI и фальшивых сертификатов</p>
+            <div class="weapon-status status-active">Активно</div>
+          </div>
+          
+          <div class="weapon-card">
+            <h3>🛡️ Адблок-щит</h3>
+            <p>Защита от трекеров и рекламы</p>
+            <div class="weapon-status status-ready">Готов</div>
+          </div>
+        </div>
+      </section>
+      
+      <section id="deploy" class="section deploy">
+        <h2 class="section-title">Разверни свой отряд</h2>
+        <div class="deploy-content">
+          <div class="deploy-card">
+            <h3>🚀 Быстрый старт</h3>
+            <p>За 5 минут разверни мировую сеть зеркал</p>
+            <pre class="deploy-code"><code>git clone https://github.com/cats-anti-rkn/battalion
+cd battalion
+npm install
+npm run deploy-mirror</code></pre>
+            <button class="cta-button">Скопировать</button>
+          </div>
+          
+          <div class="deploy-card">
+            <h3>🌍 Глобальная сеть</h3>
+            <p>Подключайся к существующим зеркалам</p>
+            <div class="mirror-list">
+              <div class="mirror-item">
+                <span class="mirror-flag">🇳🇱</span>
+                <span>mirror.nl.cats-freedom.net</span>
+                <span class="mirror-status online">Online</span>
+              </div>
+              <div class="mirror-item">
+                <span class="mirror-flag">🇩🇪</span>
+                <span>mirror.de.purr-encrypted.org</span>
+                <span class="mirror-status online">Online</span>
+              </div>
+              <div class="mirror-item">
+                <span class="mirror-flag">🇫🇮</span>
+                <span>mirror.fi.whisker-vpn.tech</span>
+                <span class="mirror-status online">Online</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <section id="facts" class="section facts">
+        <h2 class="section-title">Факты о цифровой свободе</h2>
+        <div class="fact-card" id="catFact">
+          <blockquote class="fact-quote" id="factText">
+            Загрузка фактов о котах и свободе...
+          </blockquote>
+          <cite class="fact-source">— Коты-исследователи свободы</cite>
+        </div>
+      </section>
+    </main>
+    
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-left">
+          <p>© 2024 Котофредон №1337. Лицензия: MIT (Make Internet Transparent)</p>
+          <p>Ни один кот не пострадал при создании этого сайта. Зато несколько цензоров испытали глубокое разочарование.</p>
+        </div>
+        <div class="footer-right">
+          <div class="paw-prints">
+            <span class="paw">🐾</span>
+            <span class="paw">🐾</span>
+            <span class="paw">🐾</span>
+            <span class="paw">🐾</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+  
+  <script type="module" src="/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+node_modules/
+dist/
+.env
+.DS_Store
+*.log
+.vite/
+.cache/
+.vercel
+.vercel_build_output
+.next
+.nuxt
+.cache
+.parcel-cache
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
