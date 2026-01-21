@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="fur" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4facfe;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00ff88;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="1" dy="1" stdDeviation="1" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Щит фона -->
+  <path d="M 50 10 L 80 25 L 80 55 L 50 90 L 20 55 L 20 25 Z" 
+        fill="none" 
+        stroke="#00ff88" 
+        stroke-width="3" 
+        filter="url(#shadow)"/>
+  
+  <!-- Голова кота -->
+  <circle cx="35" cy="42" r="12" fill="url(#fur)" filter="url(#shadow)"/>
+  <circle cx="65" cy="42" r="12" fill="url(#fur)" filter="url(#shadow)"/>
+  <ellipse cx="50" cy="55" rx="18" ry="15" fill="url(#fur)" filter="url(#shadow)"/>
+  
+  <!-- Уши -->
+  <path d="M 33 30 L 30 20 L 38 25 Z" fill="url(#fur)"/>
+  <path d="M 62 30 L 65 20 L 57 25 Z" fill="url(#fur)"/>
+  
+  <!-- Глаза -->
+  <circle cx="42" cy="50" r="2" fill="#000"/>
+  <circle cx="58" cy="50" r="2" fill="#000"/>
+  
+  <!-- Нос -->
+  <path d="M 50 57 L 48 60 L 52 60 Z" fill="#333"/>
+  
+  <!-- Замок -->
+  <rect x="45" y="25" width="10" height="8" rx="2" fill="#666"/>
+  <path d="M 48 22 Q 50 20 52 22" stroke="#666" stroke-width="2" fill="none"/>
+  
+  <!-- VPN текст -->
+  <text x="50" y="85" text-anchor="middle" fill="#00ff88" font-family="monospace" font-size="8" font-weight="bold">VPN</text>
+</svg>
